@@ -21,6 +21,7 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
+    $player2.receive_hit
     erb(:attack)
   end
 
