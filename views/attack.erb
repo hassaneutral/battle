@@ -1,11 +1,13 @@
 <%= @game.current_player.name %> attacked <%= @game.opponent.name %>
 
 <BR>
-
-<%= @game.opponent.name %>'s Hit Points: <%= @game.opponent.hit_points %>
-
 <BR>
-
+<%= @game.opponent.name %>'s Hit Points: <%= @game.opponent.hit_points %>
+<BR>
+<BR>
+<%= @game.current_player.name %>'s Hit Points: <%= @game.current_player.hit_points %>
+<BR>
+<BR>
 <form action='/switch' method = 'post'>
   <input type='submit' value='Switch Turn'>
 </form>
