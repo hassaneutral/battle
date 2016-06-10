@@ -2,7 +2,11 @@
 <%= @game.current_player.name %> vs <%= @game.opponent.name %>
 <BR>
 <BR>
-It is <%= @game.current_player.name %>'s turn
+  <% if (@game.current_player.hit_points <= 0) %>
+  <h1>  <%= @game.current_player.name %>, you have lost the game! :( </h1>
+    <% else %>
+    It is <%= @game.current_player.name %>'s turn
+
 <BR>
 <BR>
 <%= @game.opponent.name %>'s Hit Points: <%= @game.opponent.hit_points %>
@@ -14,3 +18,4 @@ It is <%= @game.current_player.name %>'s turn
 <form action='/attack' method='get'>
   <input type='submit' value='Attack'>
 </form>
+<% end %>
